@@ -1,74 +1,209 @@
+:root {
+    --default-green: #1db954;
+    --light-green: #1ed760;
+}
+
+
+
 * {
+    box-sizing: border;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
 }
 
 body {
-    background-image: url("https://static.vecteezy.com/ti/vetor-gratis/t2/10942357-padrao-de-barbearia-vetor.jpg");
-    background-size: cover;
-    height: 100vh; /* ALTURA */
-    width: 100vw; /* LARGURA */
+    font-family: 'ROBOTO', sans-serif;
+}
+
+/* Utility Classes */
+.btn-primary {
+    background: var(--default-green);
+    color: white;
+    text-transform: uppercase;
+    padding: 15px 60px;
+    border: none;
+    border-radius: 30px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    transition: all 500ms ease;
+}
+
+.btn-primary:hover {
+    background: var(--light-green);
+    cursor: pointer;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+/* NavBar */
+#navbar {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#navbar .navbar-container {
+    width: 60%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 20px 0;
 }
 
-.caixa-maior {
-    background-color: #000000;
-    opacity: 0.8; /* TRANSPARÊNCIA */
-    width: 95%;  /* LARGURA */
-    max-width: 450px; /* LARGURA MÁXIMA */
-    border-radius: 25px; /* ARREDONDAR BORDA */
-    padding: 20px;
+#navbar .navbar-container ul {
+    display: flex;
+    list-style: none;
+    font-weight: bold;
 }
 
-.lupa {
-    height: 20px;
-    width: 20px;
+#navbar .navbar-container ul li {
+    padding: 0 20px;
+    transition: all 500ms ease;
 }
 
-button {
-    border: none;
-    padding: 10px;
-    background-color: #7c7c7c2b;
+#navbar .navbar-container ul li:hover {
+    color: #1db954;
     cursor: pointer;
-    border-radius: 50%;
-    float: right;
 }
 
-button:hover {
-    background-color: #7c7c7c;
+
+#navbar .navbar-container ul li:nth-child(3) {
+    border-right: 1px solid white;
 }
 
-input {
-    border: none;
-    outline: none;
-    border-radius: 20px;
-    padding: 10px;
-    background-color: #7c7c7c2b;
-    color: #ffffff;
-    width: calc(100% - 100px);
-    font-size: 24px;
+/* ShowCase */
+#showcase {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: url("img/showcase.webp") center center/cover;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: color;
 }
 
-.caixa-media {
-    margin-top: 30px;
+#showcase .showcase-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.cidade {
-    color: #ffffff;
-    font-size: 28px;
+#showcase .showcase-container h2 {
+    font-size: 5rem;
 }
 
-.temp {
-    color: #ffffff;
-    margin-top: 30px;
-    font-size: 30px;
+#showcase .showcase-container p {
+    margin: 15px 0;
+    font-size: 1.1rem;
 }
 
-.umidade {
-    color: #ffffff;
-    margin-top: 30px;
+/* Footer */
+#footer {
+    background: black;
+    color: white;
+    padding: 80px 0;
+}
+
+#footer .footer-content {
+    display: flex;
+    width: 60%;
+    margin: auto;
+    justify-content: space-between;
+}
+
+#footer .footer-content .footer-menu {
+    margin: 0 40px;
+    list-style: none;
+}
+
+#footer .footer-content .footer-menu .footer-menu-item {
+    margin: 25px 0;
+    transition: all 500ms ease;
+}
+
+#footer .footer-content .footer-menu .footer-menu-item:hover {
+    color: var(--default-green);
+    cursor: pointer;
+}
+
+#footer .footer-content .footer-menu p {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #919496;
+    font-size: 0.8rem;
+}
+
+/* Footer Socials*/
+.socials {
+    display: flex;
+}
+
+.socials i {
+    margin: 0 20px;
+    font-size: 1.7rem;
+    transition: all 500ms ease;
+}
+
+.socials i:hover {
+    color: var(--default-green);
+    cursor: pointer;
+}
+
+/* Footer Infos*/
+.footer-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 60%;
+    margin: auto;
+    font-weight: bold;
+    color: #919496;
+    font-size: 0.75rem;
+    padding-top: 50px;
+}
+
+.footer-info .footer-info-items {
+    display: flex;
+    list-style: none;
+}
+
+.footer-info .footer-info-items .footer-info-item {
+    margin: 0 10px;
+    transition: all 300ms ease;
+}
+
+.footer-info .footer-info-items .footer-info-item:hover {
+    color: var(--default-green);
+    cursor: pointer;
+}
+
+.footer-info .rights .country {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.footer-info .rights .country {
+    transition: all 300ms ease;
+}
+
+.footer-info .rights .country p:hover {
+    color: var(--default-green);
+    cursor: pointer;
+}
+
+.footer-info .rights .country .brazil-flag {
+    height: 20px;
+    width: auto;
+    display: inline-block;
+    margin-left: 10px;
 }
